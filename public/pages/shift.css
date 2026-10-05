@@ -433,3 +433,5 @@ section.pad:has(> .wrap > .bonus){padding-top:0;padding-bottom:var(--space)}
 @media (max-width:420px){.sticky .btn.sticky-enroll,.sticky-explore{height:50px}}
 .sticky .btn.sticky-enroll{gap:10px}
 .sticky .btn.sticky-enroll span{margin-left:0}
+
+.duo-a .rows li{text-decoration:none}

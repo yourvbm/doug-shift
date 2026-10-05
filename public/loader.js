@@ -75,7 +75,7 @@
       var update = function () {
         var past = hero.getBoundingClientRect().bottom < 0;
         var en = root.getElementById('enroll').getBoundingClientRect();
-        sticky.classList.toggle('on', past && !(en.top < innerHeight && en.bottom > 0));
+        sticky.classList.toggle('on', past && en.top >= innerHeight);
       };
       window.addEventListener('scroll', update, { passive: true });
       window.addEventListener('resize', update);
