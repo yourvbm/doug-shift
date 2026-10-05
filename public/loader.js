@@ -31,7 +31,7 @@
   if (!document.getElementById('fs-fonts')) {
     var l = document.createElement('link');
     l.id = 'fs-fonts'; l.rel = 'stylesheet';
-    l.href = 'https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Source+Sans+3:wght@400;600&family=Source+Serif+4:ital,wght@1,400&display=swap';
+    l.href = 'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Source+Sans+3:wght@400;600&family=Source+Serif+4:ital,wght@1,400&display=swap';
     document.head.appendChild(l);
   }
 
@@ -72,11 +72,14 @@
   function wire(root) {
     var sticky = root.getElementById('sticky'), hero = root.querySelector('.hero');
     if (sticky && hero) {
-      window.addEventListener('scroll', function () {
+      var update = function () {
         var past = hero.getBoundingClientRect().bottom < 0;
         var en = root.getElementById('enroll').getBoundingClientRect();
         sticky.classList.toggle('on', past && !(en.top < innerHeight && en.bottom > 0));
-      }, { passive: true });
+      };
+      window.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update);
+      update();
     }
     var lastTrigger = null;
     function open(id, trigger) {

@@ -190,7 +190,12 @@
 
 </div>
 
-<div class="sticky" id="sticky"><button class="btn" data-open="enroll" data-track="sticky_enroll_click" type="button">Enroll Now</button></div>
+<div class="sticky" id="sticky">
+  <div class="sticky-in">
+    <button class="btn sticky-enroll" data-open="enroll" data-track="sticky_enroll_click" type="button">Enroll Now <span aria-hidden="true">&rarr;</span></button>
+    <button class="sticky-explore" data-open="call" data-track="sticky_explore_click" type="button">Explore Call</button>
+  </div>
+</div>
 
 <!-- Popups: iframes load only when opened -->
 <div class="modal" id="m-enroll" hidden role="dialog" aria-modal="true" aria-label="Enroll in The Freedom Shift">
