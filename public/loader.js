@@ -45,15 +45,39 @@
 
   Promise.all([get(base + 'pages/shift.css'), get(base + 'pages/' + page + '.html')]).then(function (r) {
     var root = host.shadowRoot || host.attachShadow({ mode: 'open' });
+    host.style.cssText = 'display:block;width:100vw;position:relative;left:50%;margin-left:-50vw;max-width:100vw';
+    document.documentElement.style.overflowX = 'clip';
     root.innerHTML = '<style>' + r[0] + '</style>' + fill(r[1]);
     wire(root);
+    reveal(root);
     if (page === 'thank-you' && window.parent === window) track('enroll_complete', { value: 1000, currency: 'USD' });
     track(page.replace('-', '_') + '_view');
   }).catch(function () {
     host.innerHTML = '<p style="font:16px sans-serif;padding:40px;text-align:center">This page is temporarily unavailable. Please refresh.</p>';
   });
 
+  function reveal(root) {
+    var els = root.querySelectorAll('.tile,.card,.session,.panel,.quote-card,.bonus,.ticket,.about-in,.window-h,.eyebrow,.turn-p');
+    if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting || (e.rootBounds && e.boundingClientRect.top < e.rootBounds.top)) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+    els.forEach(function (el, i) {
+      el.classList.add('rv');
+      el.style.transitionDelay = ((i % 4) * 70) + 'ms';
+      io.observe(el);
+    });
+  }
+
   function wire(root) {
+    var sticky = root.getElementById('sticky'), hero = root.querySelector('.hero');
+    if (sticky && hero) {
+      window.addEventListener('scroll', function () {
+        var past = hero.getBoundingClientRect().bottom < 0;
+        var en = root.getElementById('enroll').getBoundingClientRect();
+        sticky.classList.toggle('on', past && !(en.top < innerHeight && en.bottom > 0));
+      }, { passive: true });
+    }
     var lastTrigger = null;
     function open(id, trigger) {
       var m = root.getElementById('m-' + id); if (!m) return;
