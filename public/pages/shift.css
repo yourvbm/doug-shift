@@ -409,3 +409,7 @@ section.pad:has(> .wrap > .bonus){padding-top:0;padding-bottom:var(--space)}
 .rows li{font-weight:500;letter-spacing:-.015em}
 .duo-b .rows li{font-weight:600}
 .num{font-weight:700}
+
+/* hero tagline: one line under the title */
+.hero .tag{max-width:none;font-size:clamp(17px,2.2vw,26px);white-space:nowrap}
+@media (max-width:700px){.hero .tag{white-space:normal;font-size:20px;max-width:22em;text-wrap:balance}}
