@@ -418,3 +418,18 @@ section.pad:has(> .wrap > .bonus){padding-top:0;padding-bottom:var(--space)}
 .sticky-explore{flex:0 0 auto;white-space:nowrap}
 .sticky .btn.sticky-enroll{flex:1 1 auto}
 @media (max-width:420px){.sticky-explore{font-size:12px;letter-spacing:.04em;padding:14px 12px}.sticky-in{gap:10px}}
+
+/* sticky bar: light lead-in labels above each button */
+.sticky-in{align-items:flex-end}
+.sticky-col{display:flex;flex-direction:column;gap:7px;min-width:0}
+.sticky-col--enroll{flex:1 1 auto}
+.sticky-col--explore{flex:0 0 auto}
+.sticky-label{font-family:var(--label);font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.62);text-align:center;white-space:nowrap}
+.sticky-col--enroll .sticky-label{color:var(--gold-soft)}
+.sticky .btn.sticky-enroll{width:100%}
+.sticky-explore{width:100%}
+@media (max-width:420px){.sticky-label{font-size:10.5px;letter-spacing:.06em}.sticky-col{gap:6px}}
+.sticky .btn.sticky-enroll,.sticky-explore{height:54px;padding-top:0;padding-bottom:0;display:flex;align-items:center;justify-content:center;white-space:nowrap}
+@media (max-width:420px){.sticky .btn.sticky-enroll,.sticky-explore{height:50px}}
+.sticky .btn.sticky-enroll{gap:10px}
+.sticky .btn.sticky-enroll span{margin-left:0}
