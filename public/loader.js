@@ -31,7 +31,7 @@
   if (!document.getElementById('fs-fonts')) {
     var l = document.createElement('link');
     l.id = 'fs-fonts'; l.rel = 'stylesheet';
-    l.href = 'https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Source+Sans+3:wght@400;600&family=Source+Serif+4:ital,wght@1,400&display=swap';
+    l.href = 'https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Source+Sans+3:wght@400;600&family=Source+Serif+4:ital,wght@1,400&display=swap';
     document.head.appendChild(l);
   }
 
@@ -57,7 +57,7 @@
   });
 
   function reveal(root) {
-    var els = root.querySelectorAll('.tile,.card,.session,.panel,.quote-card,.bonus,.ticket,.about-in,.window-h,.eyebrow,.turn-p');
+    var els = root.querySelectorAll('.tile,.card,.session,.duo,.quote-card,.bonus,.ticket,.about-in,.window-h,.eyebrow,.turn-p');
     if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     var io = new IntersectionObserver(function (es) {
       es.forEach(function (e) { if (e.isIntersecting || (e.rootBounds && e.boundingClientRect.top < e.rootBounds.top)) { e.target.classList.add('in'); io.unobserve(e.target); } });
