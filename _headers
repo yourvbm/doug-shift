@@ -1,0 +1,7 @@
+/*
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=60, must-revalidate
+/assets/*
+  Cache-Control: public, max-age=3600
+/thank-you.html
+  X-Robots-Tag: noindex
