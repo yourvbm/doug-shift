@@ -435,3 +435,34 @@ section.pad:has(> .wrap > .bonus){padding-top:0;padding-bottom:var(--space)}
 .sticky .btn.sticky-enroll span{margin-left:0}
 
 .duo-a .rows li{text-decoration:none}
+
+/* italic accent word */
+.h1 .gold{font-style:italic;padding-right:.04em}
+
+/* capacities line: words wrap as units, never strand one */
+.quote-card .words{display:flex;flex-wrap:wrap;justify-content:flex-start;column-gap:0;row-gap:2px;text-wrap:balance}
+.quote-card .words span{white-space:nowrap}
+.quote-card .words span:not(:last-child)::after{content:"\00B7";margin:0 .55em;color:var(--gold)}
+
+/* mobile refinements */
+@media (max-width:600px){
+  .turn{padding-left:14px;padding-right:14px}
+  .turn-1,.turn-2{font-size:clamp(14px,4.7vw,26px);white-space:nowrap;letter-spacing:-.02em}
+  .quote-card .words{font-size:20px;line-height:1.55}
+}
+@media (max-width:760px){
+  .about-in{justify-content:center;text-align:center;gap:28px}
+  .about-photo{margin:0 auto}
+  .about-text{flex:1 1 100%}
+  .about-text .body{margin-left:auto;margin-right:auto}
+  .role{max-width:20em;margin-left:auto;margin-right:auto}
+}
+.quote-card .words{display:block}
+
+@media (max-width:600px){.turn-1,.turn-2{font-size:clamp(14px,5.25vw,28px)}}
+.role{text-wrap:balance}
+@media (max-width:600px){
+  .quote-card{padding:32px 22px 32px 24px}
+  .quote-card .words{font-size:18px;line-height:1.6}
+  .quote-card .words span:not(:last-child)::after{margin:0 .4em}
+}

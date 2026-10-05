@@ -31,7 +31,7 @@
   if (!document.getElementById('fs-fonts')) {
     var l = document.createElement('link');
     l.id = 'fs-fonts'; l.rel = 'stylesheet';
-    l.href = 'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Source+Sans+3:wght@400;600&family=Source+Serif+4:ital,wght@1,400&display=swap';
+    l.href = 'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,500;0,600;0,700;0,800;1,700;1,800&family=Source+Sans+3:wght@400;600&family=Source+Serif+4:ital,wght@1,400&display=swap';
     document.head.appendChild(l);
   }
 
