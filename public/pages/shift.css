@@ -473,3 +473,10 @@ section.pad:has(> .wrap > .bonus){padding-top:0;padding-bottom:var(--space)}
 .sec:has(.steps) .eyebrow{justify-content:center}
 .sec:has(.steps) .eyebrow::after{content:"";width:36px;height:2px;background:var(--gold)}
 .sec:has(.steps) .h2{margin-left:auto;margin-right:auto;text-align:center}
+
+/* logo in the menu */
+.logo-link{display:inline-block;line-height:0;transition:opacity .15s}
+.logo-link:hover{opacity:.85}
+.logo{display:block;height:84px;width:auto}
+@media (max-width:600px){.logo{height:64px}}
+.logo{filter:drop-shadow(0 1px 10px rgba(0,0,0,.45))}
