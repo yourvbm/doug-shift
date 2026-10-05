@@ -413,3 +413,8 @@ section.pad:has(> .wrap > .bonus){padding-top:0;padding-bottom:var(--space)}
 /* hero tagline: one line under the title */
 .hero .tag{max-width:none;font-size:clamp(17px,2.2vw,26px);white-space:nowrap}
 @media (max-width:700px){.hero .tag{white-space:normal;font-size:20px;max-width:22em;text-wrap:balance}}
+
+/* sticky bar: Explore sizes to its label, Enroll takes the rest */
+.sticky-explore{flex:0 0 auto;white-space:nowrap}
+.sticky .btn.sticky-enroll{flex:1 1 auto}
+@media (max-width:420px){.sticky-explore{font-size:12px;letter-spacing:.04em;padding:14px 12px}.sticky-in{gap:10px}}
