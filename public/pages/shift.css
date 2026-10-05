@@ -466,3 +466,10 @@ section.pad:has(> .wrap > .bonus){padding-top:0;padding-bottom:var(--space)}
   .quote-card .words{font-size:18px;line-height:1.6}
   .quote-card .words span:not(:last-child)::after{margin:0 .4em}
 }
+
+/* thank-you page: everything centered */
+.ty-body .kicker{justify-content:center}
+.ty-body .tag{max-width:none;margin-left:auto;margin-right:auto}
+.sec:has(.steps) .eyebrow{justify-content:center}
+.sec:has(.steps) .eyebrow::after{content:"";width:36px;height:2px;background:var(--gold)}
+.sec:has(.steps) .h2{margin-left:auto;margin-right:auto;text-align:center}

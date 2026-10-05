@@ -5,7 +5,7 @@
   var CONFIG = {
     ORDER_URL: 'https://dougstoddard.com/shift-enroll',
     CALENDAR_URL: 'https://link.dougstoddard.com/widget/booking/RSsmMMSRg0R6KZWF1eaw',
-    THANKYOU_URL: 'https://dougstoddard.com/shift-thank-you'
+    THANKYOU_URL: 'https://dougstoddard.com/shift-thankyou'
   };
 
   var script = document.currentScript;
@@ -26,6 +26,10 @@
      tell the parent page to go to the thank-you page. */
   if (page === 'thank-you' && window.parent !== window) {
     try { window.parent.postMessage({ shiftEnrolled: true }, '*'); } catch (e) {}
+    if (window.name === 'shift-order') {
+      host.innerHTML = '<p style="font:600 16px sans-serif;color:#3E4F5B;padding:48px 20px;text-align:center">Enrollment confirmed. Taking you to your confirmation page&hellip;</p>';
+      return;
+    }
   }
 
   if (!document.getElementById('fs-fonts')) {
